@@ -4,7 +4,7 @@ result: http://fadshop.net/resume/javademo/ball.htm
 
 */
 
-import java.applet.*;
+//import java.applet.*;
 import java.awt.*;
 
 
@@ -46,6 +46,7 @@ public class BallCanvas extends Canvas
 
 	public boolean addBall(HideBall b)
 	{
+		System.out.println("addBall: now we have " + this.ballNum + " balls, will add one more if possible.");
 
 		if (ballNum == MAXBALLNUM)
 		{
@@ -70,6 +71,7 @@ public class BallCanvas extends Canvas
 
 	public boolean delLastBall()
 	{
+		System.out.println("addBall: now we have " + this.ballNum + " balls, will delete one if possible.");
 		if (ballNum > 0)
 		{
 			ballNum --;
@@ -80,8 +82,9 @@ public class BallCanvas extends Canvas
 	}
 
    // Executed whenever the applet is asked to redraw itself.
-	public void update (Graphics g)
+	public void paint (Graphics g)
 	{
+		//System.out.println("Start to repaint the canvas.");
 		// Initial
 		if (backbuffer == null)
 		{
@@ -96,13 +99,13 @@ public class BallCanvas extends Canvas
 		backg.fillRect (0, 0, this.getSize().width, this.getSize().height);
 
 		// paint in backg.
-		paint (backg);
+		paintbg (backg);
 
 		// show the backg.
 		g.drawImage (backbuffer, 0, 0, this);
 	}
 
-	public void paint( Graphics g )		
+	public void paintbg( Graphics g )		
 	{	// paint in backbuffer.
 		g.clearRect(0, 0, width, height);
 		g.setColor(Color.black);

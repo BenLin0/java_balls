@@ -1,10 +1,11 @@
-import java.applet.*;
+//import java.applet.*;
 import java.awt.*;
 /* an Applet to test HideBall.java.
 result: http://fadshop.net/resume/javademo/ball.htm
 
 */
-public class TestBall extends Applet implements Runnable {
+
+public class TestBall  implements Runnable {
 	BallCanvas ballCanvas;
 	BallControls ballControl;
 	Thread RunThread;

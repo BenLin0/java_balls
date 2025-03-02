@@ -29,7 +29,7 @@ class HideBall
 	private int BorderEndX;
 	private int BorderEndY;
 
-	public void HideBall()
+	public  HideBall()
 	{
 		colliding = false;
 		ready = false;				//Not ready before Border, Radius, Delta are set.
@@ -97,12 +97,19 @@ class HideBall
 				( (DeltaX == 1) || (DeltaX == -1) ) )
 			{
 				ready = true;
+				System.out.println("ready = true");
+			}
+			else{
+				System.out.println(" the ball is not in border, not ready?");
+				System.err.println("BorderStartX:" + BorderStartX + " BorderEndX:" + BorderEndX + "BorderStartY:" + BorderStartY);
+				System.err.println("BorderEndY:" + BorderEndY + " Radius:" + Radius + " DeltaX:" + DeltaX);
 			}
 			return ready;
 		}
 		else
 		{
 			ready = false;
+			System.out.println("ready is false, disabled it successfully.");
 			return true;	// success.
 		}
 	}
@@ -228,6 +235,7 @@ class HideBall
 	{
 		if (colliding == true)
 		{
+			System.err.println("Colliding!");
 			g.setColor (Color.white);
 			colliding = false;
 		}
